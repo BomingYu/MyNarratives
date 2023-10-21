@@ -1,0 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans&family=Saira:wght@500&display=swap");
+
+body {
+    font-family: "Saira", sans-serif;
+}
+.logoImg{
+    width: 50px;
+}
+.mainBodyDiv{
+    display: flex;
+}
+.leftDiv{
+    border: 1px black solid;
+    flex: 1;
+    margin: 2px;
+}
+.midDiv{
+    flex:2.5;
+    /* border: 1px black solid; */
+    margin: 2px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.rightDiv{
+    flex:1;
+    border: 1px black solid;
+    margin: 2px;
+}
+
+@media(max-width:768px){
+    .mainBodyDiv{
+        flex-direction: column;
+    }
+    .leftDiv, .midDiv, .rightDiv{
+        flex: 1;
+    }
+}
+
+.postCard{
+    padding-left: 8px;
+    padding-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: rgb(70, 70, 70) 1px solid;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.postCard:hover{
+    border: rgb(30, 30, 30) 3px solid;
+}
+.postDetail{
+    display: flex;
+    gap: 10px;
+}
+
+.myPicDIv, .myMusicDiv{
+    border: black 1px solid;
+}
+
+.rightDiv{
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+.postForm{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    gap: 3px;
+}
