@@ -20,4 +20,10 @@ Route::get('/newPost' , [postController::class , 'addNewPost'])->name('post.add'
 
 Route::post('/newPostCreate' , [postController::class , 'createNewPost'])->name('post.create');
 
-Route::get('/post' , [postController::class , 'getPost'])->name('post.show');
+Route::get('/post/{post}' , [postController::class , 'getPost'])->name('post.show');
+
+Route::get('/post/{post}/edit' , [postController::class , 'editPost'])->name('post.edit');
+
+Route::delete('/post/{post}/delete' , [postController::class , 'deletePost'])->name('post.delete');
+
+Route::put('/post/{post}/update' , [postController::class , 'updatePost'])->name('post.update');
