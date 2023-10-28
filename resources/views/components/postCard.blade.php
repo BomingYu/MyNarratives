@@ -9,6 +9,5 @@
             @method('delete')
             <button type="submit" class="btn btn-danger">X</button>
          </form>
-         {{-- <a href="{{route('post.delete' , $post->id)}}" class="delLink">Delete</a> --}}
      </div>
  </div>

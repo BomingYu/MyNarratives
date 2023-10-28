@@ -44,14 +44,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: rgb(70, 70, 70) 1px solid;
-    border-top-left-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 5px;
-    border-bottom-left-radius: 5px;
+    border: rgb(100, 100, 100) 3px solid;
+    border-radius: 10px;
 }
 .postCard:hover{
-    border: rgb(30, 30, 30) 3px solid;
+    border: rgb(150, 153, 103) 3px solid;
 }
 .postDetail{
     display: flex;
@@ -88,4 +85,41 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+.likeIcon{
+    height: 20px;
+    margin-right: 3px;
+}
+.mainBody{
+    margin-top: 5px;
+}
+
+.commentUser{
+    display: flex;
+    gap: 3px;
+    align-items: center;
+}
+.commentTitle{
+    padding: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.commentCard , .commentBodyDiv{
+    border: solid lightgray 1px;
+    border-radius: 5px;
+    padding: 3px;
+}
+
+.commentAvatar{
+    border-radius: 50%;
+    height: 50px;
+}
+
+.footerDiv{
+    background-color: rgb(180, 180, 180);
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

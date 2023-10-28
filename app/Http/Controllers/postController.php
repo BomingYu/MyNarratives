@@ -10,7 +10,7 @@ class postController extends Controller
 
 
     public function index(){
-        return view('mainPage', [
+        return view('homePage', [
             'posts' => Post::orderBy('created_at' , 'desc')->paginate(5)
         ]);
     }

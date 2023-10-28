@@ -1,10 +1,10 @@
-@extends('templates.basic')
+@extends('templates.mainPage')
 
-@section('pageTitle')
+@section('pageName')
     New Post
 @endsection
 
-@section('mainBody')
+@section('midDiv')
     <form class="postForm" action="{{ route('post.create') }}" method="POST">
         @csrf
         <input type="text" class="form-control" id="title" name="title" placeholder="Post Title">

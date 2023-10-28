@@ -19,10 +19,12 @@
 </head>
 
 <body>
-    @include('components.navBar')
-    @yield('mainBody')
 
-    <footer>
+    @include('components.navBar')
+    <div class="mainBody">
+        @yield('mainBody')
+    </div>
+    <footer class="footerDiv">
         <p>&copy; 2023 Boming Yu | <a href="#">Details/Contact</a></p>
     </footer>
 </body>

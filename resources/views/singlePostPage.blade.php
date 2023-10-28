@@ -1,10 +1,10 @@
-@extends('templates.basic')
+@extends('templates.mainPage')
 
-@section('pageTitle')
+@section('pageName')
     {{ $post->title }}
 @endsection
 
-@section('mainBody')
+@section('midDiv')
     @if ($editing ?? false)
         <form class="postForm" action="{{ route('post.update' , $post->id) }}" method="POST">
             @csrf
@@ -31,7 +31,13 @@
                     <button type="submit" class="btn btn-danger">Delete</button>
                  </form>
             </div>
-            
+            <div class="mt-3">
+                <a href="#"><img src="{{asset('heart.png')}}" alt="like" class="likeIcon"></a>
+                <span>likeCount</span>
+            </div>
         </div>
     @endif
+    <hr>
+    @include('components.commentInput')
+    @include('components.commentCard')
 @endsection
