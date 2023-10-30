@@ -30,10 +30,11 @@ class postController extends Controller
         ]);
 
         $post = new Post([
+            'user_id'=>auth()->user()->id,
             'title'=>request()->get('title',''),
-            'body'=>request()->get('body','')
+            'body'=>request()->get('body',''),
         ]);
-
+        //dd($post);
         $post->save();
 
         return redirect()->route('home')->with('success', 'Post created successfully');

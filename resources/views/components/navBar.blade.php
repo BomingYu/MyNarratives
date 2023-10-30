@@ -32,7 +32,7 @@
             <ul class="navbar-nav d-flex m-3">
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="#">{{ Auth::user()->email }}</a>
+                        <a class="nav-link" href="{{route('user.profile' , Auth::user()->id)}}">{{ Auth::user()->email }}</a>
                     </li>
                     <li class="nav-item">
                         <form action="{{ route('user.loggingout') }}" method="POST">

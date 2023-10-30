@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
@@ -23,7 +24,7 @@ class UserController extends Controller
             'email' => 'required|email|unique:users,email',
             'password' => 'required|confirmed',
             'bio' => 'nullable',
-            'image' => 'image'
+            'image' => 'image|nullable'
         ]);
         
         if (request()->has('image')) {
@@ -31,7 +32,7 @@ class UserController extends Controller
             $validate['image'] = $imagePath;
         }
         else{
-            $validate['image'] = 'https://api.dicebear.com/6.x/fun-emoji/svg?seed=' .$validate['name'];
+            $validate['image'] = null;
         }
 
         User::create(
@@ -65,5 +66,46 @@ class UserController extends Controller
         auth()->logout();
         request()->session()->regenerateToken();
         return redirect()->route('home')->with('success','Logged Out');
+    }
+
+    public function gotoProfile(User $user){
+        $posts = $user->posts()->paginate(5);
+        return view('profilePage' , compact('user' , 'posts'));
+    }
+
+    public function profileEdit(User $user){
+        $editing = true;
+        $posts = $user->posts()->paginate(5);
+        return view('profilePage' , compact('user' , 'editing' , 'posts'));
+    }
+
+    public function profileUpdate(User $user){
+        
+        $validate = request()->validate([
+            'name' => 'required|min:1',
+            'bio' => 'nullable|max:255',
+            'image' => 'image|nullable'
+        ]);
+
+        if(request()->has('randomIcon')){
+            $validate['image'] = null;
+        }
+        else{
+            if(request()->has('image')){
+                $imagePath = request()->file('image')->store('profile' , 'public');
+                $validate['image'] = $imagePath;
+
+                if($user->image){
+                    Storage::disk('public')->delete($user->image);
+                }
+            }
+            else{
+                unset($validate['image']);
+            }
+        }
+        
+        //dd($validate);
+        $user->update($validate);
+        return redirect()->route('user.profile' , ['user'=>$user->id])->with('success' , 'Profile updated successfully!');
     }
 }

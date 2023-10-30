@@ -42,20 +42,46 @@ body {
     padding-left: 8px;
     padding-right: 8px;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     border: rgb(100, 100, 100) 3px solid;
     border-radius: 10px;
 }
 .postCard:hover{
     border: rgb(150, 153, 103) 3px solid;
 }
+.postCardUser{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 3px;
+}
+.postCardUserLeft{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+.postCardBody{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
 .postDetail{
     display: flex;
     gap: 10px;
     align-items: center;
 }
-
+.postUserImage{
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
 .myPicDIv, .myMusicDiv{
     border: black 1px solid;
 }
@@ -70,13 +96,14 @@ body {
     display: flex;
     flex-direction: column;
     align-items:center;
-    gap: 3px;
+    gap: 8px;
 }
 .viewPostDiv{
     margin: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 8px;
 }
 .delLink{
     color: red;
@@ -86,8 +113,8 @@ body {
     align-items: center;
     gap: 15px;
 }
-.likeIcon{
-    height: 20px;
+.likeIcon , .postsIcon{
+    height: 30px;
     margin-right: 3px;
 }
 .mainBody{
@@ -113,9 +140,61 @@ body {
 
 .commentAvatar{
     border-radius: 50%;
+    width: 50px;
     height: 50px;
+    object-fit: cover;
+    object-position: center;
 }
 
+.singlePostUser{
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+.warningMessage{
+    color: red;
+}
+
+.profileCard{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    margin: 3px;
+}
+.profileTitleDiv{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    gap: 15px;
+    margin: 5px;
+}
+.profileSmallDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+.profileCard span{
+    word-break: break-all;
+    font-size: larger;
+}
+.profileCard h4{
+    color: rgb(160, 160, 160);
+}
+.likeNpostCount{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.labelNinput{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 .footerDiv{
     background-color: rgb(180, 180, 180);
     margin-top: 5px;

@@ -1,4 +1,4 @@
-<form enctype="multipart/form-data" class="postForm" action="{{ route('users.register') }}" method="POST">
+<form enctype="multipart/form-data" class="postForm" action="{{ route('user.register') }}" method="POST">
     @csrf
     @method('post')
     <h2>Signup</h2>

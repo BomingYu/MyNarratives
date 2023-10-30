@@ -12,7 +12,7 @@
             @include('components.postCard')
         @endforeach
     @else
-        <h5>No Post Shown</h5>
+        <h5 class="warningMessage">No Post Shown</h5>
     @endif
 
 
