@@ -96,7 +96,7 @@ class UserController extends Controller
                 $validate['image'] = $imagePath;
 
                 if($user->image){
-                    Storage::disk('public')->delete($user->image);
+                    Storage::disk('public')->delete($user->image ?? '');
                 }
             }
             else{

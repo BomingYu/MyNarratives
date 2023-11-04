@@ -51,6 +51,7 @@ class User extends Authenticatable
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+
     public function getImageUrl(){
         if($this->image){
             return url('storage/' , $this->image);
