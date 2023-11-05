@@ -7,12 +7,12 @@
 @section('midDiv')
     @include('components.successMessage')
     @if ($editing ?? false)
-        @include('components.userUpdateForm')
+        @include('components.users.userUpdateForm')
     @else
-        @include('components.userProfileCard')
+        @include('components.users.userProfileCard')
         @if ($posts->count() > 0)
             @foreach ($posts as $post)
-                @include('components.postCard')
+                @include('components.posts.postCard')
             @endforeach
         @else
             <h5 class="warningMessage">{{ $user->name }} has no post.</h5>

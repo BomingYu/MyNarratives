@@ -45,6 +45,6 @@
         </div>
     @endif
     <hr>
-    @include('components.commentInput')
-    @include('components.commentCard')
+    @include('components.comments.commentInput')
+    @include('components.comments.commentCard')
 @endsection

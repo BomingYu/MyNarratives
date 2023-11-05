@@ -9,7 +9,16 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('post.add') }}">New Post</a>
+                        <a class="nav-link mx-3" href="#">My Posts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="#">My Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="#">My Music</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link mx-3" href="{{ route('post.add') }}">New Post</a>
                     </li>
                 @endauth
 
@@ -32,7 +41,8 @@
             <ul class="navbar-nav d-flex m-3">
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('user.profile' , Auth::user()->id)}}">{{ Auth::user()->email }}</a>
+                        <a class="nav-link"
+                            href="{{ route('user.profile', Auth::user()->id) }}">{{ Auth::user()->email }}</a>
                     </li>
                     <li class="nav-item">
                         <form action="{{ route('user.loggingout') }}" method="POST">

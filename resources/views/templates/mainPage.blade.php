@@ -6,10 +6,10 @@
 
 @section('mainBody')
     <div class="mainBodyDiv">
-        @include('components.leftSideBox')
+        @yield('leftSIdeBox')
         <div class="midDiv">
             @yield('midDiv')
         </div>
-        @include('components.rightSideBox')
+        @yield('rightSideBox')
     </div>
 @endsection

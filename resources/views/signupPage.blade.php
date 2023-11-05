@@ -5,5 +5,5 @@
 @endsection
 
 @section('midDiv')
-    @include('components.signupComponent')
+    @include('components.users.signupComponent')
 @endsection

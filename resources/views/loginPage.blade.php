@@ -6,5 +6,5 @@
 
 @section('midDiv')
     @include('components.successMessage')
-    @include('components.loginComponent')
+    @include('components.users.loginComponent')
 @endsection
