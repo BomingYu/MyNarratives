@@ -57,6 +57,11 @@ body {
     width: 100%;
     margin: 3px;
 }
+.postCardMiddle{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
 .postCardUserLeft{
     display: flex;
     align-items: center;
@@ -194,6 +199,25 @@ body {
     display: flex;
     align-items: center;
     gap: 5px;
+}
+.myCardPosts{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.myLeftCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin: 3px;
+}
+.myLeftCardImg{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
 }
 .footerDiv{
     background-color: rgb(180, 180, 180);

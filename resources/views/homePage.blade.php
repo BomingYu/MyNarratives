@@ -5,7 +5,7 @@
 @endsection
 
 @section('leftSIdeBox')
-    @include('components.sideBars.homeLeftBar')
+    @include('components.sideBars.myLeftBar')
 @endsection
 
 @section('midDiv')
@@ -20,5 +20,5 @@
 @endsection
 
 @section('rightSideBox')
-    @include('components.sideBars.homeRightBar')
+    @include('components.sideBars.myRightBar')
 @endsection

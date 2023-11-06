@@ -4,6 +4,14 @@
     Profile
 @endsection
 
+@section('leftSIdeBox')
+    @if (Auth::user()->id === $user->id)
+        @include('components.sideBars.myLeftBar')
+    @else
+        @include('components.sideBars.otherUserLeftBar')
+    @endif
+@endsection
+
 @section('midDiv')
     @include('components.successMessage')
     @if ($editing ?? false)
@@ -18,6 +26,12 @@
             <h5 class="warningMessage">{{ $user->name }} has no post.</h5>
         @endif
     @endif
+@endsection
 
-
+@section('rightSideBox')
+    @if (Auth::user()->id === $user->id)
+        @include('components.sideBars.myRightBar')
+    @else
+        @include('components.sideBars.otherUserRightBar')
+    @endif
 @endsection

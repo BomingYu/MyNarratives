@@ -43,8 +43,9 @@
                 <span>likeCount</span>
             </div>
         </div>
+        <hr>
+        @include('components.comments.commentInput')
+        @include('components.comments.commentCard')
     @endif
-    <hr>
-    @include('components.comments.commentInput')
-    @include('components.comments.commentCard')
+
 @endsection

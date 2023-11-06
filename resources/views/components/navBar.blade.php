@@ -9,7 +9,7 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link mx-3" href="#">My Posts</a>
+                        <a class="nav-link mx-3" href="{{route('myPost.show' , Auth::user()->id)}}">My Posts</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link mx-3" href="#">My Photos</a>

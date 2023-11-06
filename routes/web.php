@@ -32,6 +32,8 @@ Route::put('/post/{post}/update' , [postController::class , 'updatePost'])->name
 
 Route::post('/post/{post}/comment' , [CommentController::class , 'store'])->name('comment.add');
 
+Route::get('/post/myPosts/{user}' , [postController::class , 'getMyPosts'])->name('myPost.show');
+
 
 Route::get('/login' , [UserController::class , 'gotoLogin'])->name('user.login');
 
