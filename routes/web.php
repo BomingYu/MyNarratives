@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\postController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -50,3 +51,8 @@ Route::get('/profile/{user}' , [UserController::class , 'gotoProfile'])->name('u
 Route::get('/profile/{user}/edit' , [UserController::class , 'profileEdit'])->name('user.edit');
 
 Route::put('/profile/{user}' , [UserController::class , 'profileUpdate'])->name('user.update');
+
+
+Route::post('/posts/{post}/like' , [LikeController::class , 'postLike'])->name('post.like');
+
+Route::post('/posts/{post}/unlike' , [LikeController::class , 'postUnlike'])->name('post.unlike');

@@ -39,8 +39,7 @@
                 </div>
             @endif
             <div class="mt-3">
-                <a href="#"><img src="{{ asset('heart.png') }}" alt="like" class="likeIcon"></a>
-                <span>likeCount</span>
+                @include('components.posts.likeNunlikeCard')
             </div>
         </div>
         <hr>

@@ -52,6 +52,13 @@ class User extends Authenticatable
         return $this->hasMany(Comment::class);
     }
 
+    public function likes(){
+        return $this->belongsToMany(Post::class , 'posts_likes')->withTimestamps();
+    }
+    public function unlikes(){
+        return $this->belongsToMany(Post::class , 'posts_unlikes')->withTimestamps();
+    }
+
     public function getImageUrl(){
         if($this->image){
             return url('storage/' , $this->image);

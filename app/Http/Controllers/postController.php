@@ -63,7 +63,7 @@ class postController extends Controller
         $post->save();
         return redirect()->route('home')->with('success','The post updated successfully!');
     }
-
+    
     public function getMyPosts(User $user){
         $posts = $user->posts()->orderBy('created_at' , 'desc')->paginate(5);
         return view('homePage' , compact('posts'));

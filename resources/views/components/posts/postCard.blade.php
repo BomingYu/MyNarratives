@@ -7,10 +7,7 @@
              </a>
          </div>
          <div class="postCardUserRight">
-             <a href="#"><img src="{{ asset('heart.png') }}" alt="like" class="likeIcon"></a>
-             <span>likeCount</span>
-             <a href="#"><img src="{{ asset('unheart.png') }}" alt="like" class="unlikeIcon"></a>
-             <span>likeCount</span>
+            @include('components.posts.likeNunlikeCard')
              <div class="postCardMiddle mx-3 mt-3">
                  <img src="{{ asset('comment.png') }}" alt="like" class="likeIcon">
                  <span>{{$post->comments()->count()}}</span>

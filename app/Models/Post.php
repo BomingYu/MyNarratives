@@ -22,4 +22,17 @@ class Post extends Model
     public function comments(){
         return $this->hasMany(Comment::class);
     }
+
+    public function likes(){
+        return $this->belongsToMany(User::class , 'posts_likes')->withTimestamps();
+    }
+    public function unlikes(){
+        return $this->belongsToMany(USer::class , 'posts_unlikes')->withTimestamps();
+    }
+    public function liking(Post $post){
+        return $this->likes()->where('post_id' , $post->id)->exists();
+    }
+    public function unliking(Post $post){
+        return $this->unlikes()->where('post_id' , $post->id)->exists();
+    } 
 }
