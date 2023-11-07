@@ -11,12 +11,12 @@
                 <img src="{{ asset('music.png') }}" alt="Posts" class="postsIcon">
                 <span>{{ Auth::user()->posts()->count() }}</span>
             </div>
-            <div class="postCardUserRight mb-3">
+            {{-- <div class="postCardUserRight mb-3">
                 <img src="{{ asset('heart.png') }}" alt="Likes" class="postsIcon">
                 <span>Like</span>
                 <img src="{{ asset('unheart.png') }}" alt="Likes" class="postsIcon">
                 <span>Unlike</span>
-            </div>
+            </div> --}}
             <p>{{ Auth::user()->bio }}</p>
             <a href="{{route('user.edit' , Auth::user()->id)}}" class="m-3">Edit Profile</a>
         </div>

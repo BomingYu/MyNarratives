@@ -118,6 +118,10 @@ body {
     align-items: center;
     gap: 15px;
 }
+.likingDiv{
+    display: flex;
+    gap: 5px;
+}
 .likeIcon , .postsIcon{
     height: 30px;
     margin-right: 3px;

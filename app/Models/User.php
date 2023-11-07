@@ -65,4 +65,10 @@ class User extends Authenticatable
         }
         return 'https://api.dicebear.com/6.x/fun-emoji/svg?seed='.$this->name;
     }
+    public function liking(Post $post){
+        return $this->likes()->where('post_id' , $post->id)->exists();
+    }
+    public function unliking(Post $post){
+        return $this->unlikes()->where('post_id' , $post->id)->exists();
+    } 
 }

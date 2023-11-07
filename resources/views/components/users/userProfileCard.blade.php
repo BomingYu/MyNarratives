@@ -24,12 +24,12 @@
                 <img src="{{ asset('news.png') }}" alt="Posts" class="postsIcon">
                 <span>{{ $user->posts()->count() }}</span>
             </div>
-            <div class="postCardUserRight">
+            {{-- <div class="postCardUserRight">
                 <img src="{{ asset('heart.png') }}" alt="Likes" class="likeIcon">
-                <span>LikeCount</span>
+                <span>{{$user->likes()->count()}}</span>
                 <img src="{{ asset('unheart.png') }}" alt="Likes" class="likeIcon">
                 <span>UnlikeCount</span>
-            </div>
+            </div> --}}
         </div>
         <hr>
     </div>

@@ -29,10 +29,5 @@ class Post extends Model
     public function unlikes(){
         return $this->belongsToMany(USer::class , 'posts_unlikes')->withTimestamps();
     }
-    public function liking(Post $post){
-        return $this->likes()->where('post_id' , $post->id)->exists();
-    }
-    public function unliking(Post $post){
-        return $this->unlikes()->where('post_id' , $post->id)->exists();
-    } 
+    
 }
