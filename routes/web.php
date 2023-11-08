@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\followController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\postController;
 use App\Http\Controllers\UnlikeController;
@@ -36,6 +37,10 @@ Route::post('/post/{post}/comment' , [CommentController::class , 'store'])->name
 
 Route::get('/post/myPosts/{user}' , [postController::class , 'getMyPosts'])->name('myPost.show');
 
+Route::post('/posts/{post}/like' , [LikeController::class , 'postLike'])->middleware('auth')->name('post.like');
+
+Route::post('/posts/{post}/unlike' , [UnlikeController::class , 'postUnlike'])->middleware('auth')->name('post.unlike');
+
 
 Route::get('/login' , [UserController::class , 'gotoLogin'])->name('user.login');
 
@@ -54,6 +59,6 @@ Route::get('/profile/{user}/edit' , [UserController::class , 'profileEdit'])->na
 Route::put('/profile/{user}' , [UserController::class , 'profileUpdate'])->name('user.update');
 
 
-Route::post('/posts/{post}/like' , [LikeController::class , 'postLike'])->middleware('auth')->name('post.like');
+Route::post('/user/{user}/follow' , [followController::class , 'followUser'])->name('user.follow');
+Route::post('/user/{user}/unfollow' , [followController::class , 'unfollowUser'])->name('user.unfollow');
 
-Route::post('/posts/{post}/unlike' , [UnlikeController::class , 'postUnlike'])->middleware('auth')->name('post.unlike');

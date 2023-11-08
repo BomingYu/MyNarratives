@@ -223,6 +223,11 @@ body {
     object-position: center;
     border-radius: 50%;
 }
+.userFollowDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 .footerDiv{
     background-color: rgb(180, 180, 180);
     margin-top: 5px;

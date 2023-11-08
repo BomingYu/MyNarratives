@@ -4,7 +4,7 @@
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
-        <div class="myPicDIv">Following</div>
-        <div class="myMusicDiv">Followers</div>
+        @include('components.sideBars.myRightFollowsBar')
+        @include('components.sideBars.myRightFollowersBar')
     </div>
 @endauth

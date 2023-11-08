@@ -58,17 +58,30 @@ class User extends Authenticatable
     public function unlikes(){
         return $this->belongsToMany(Post::class , 'posts_unlikes')->withTimestamps();
     }
-
-    public function getImageUrl(){
-        if($this->image){
-            return url('storage/' , $this->image);
-        }
-        return 'https://api.dicebear.com/6.x/fun-emoji/svg?seed='.$this->name;
-    }
     public function liking(Post $post){
         return $this->likes()->where('post_id' , $post->id)->exists();
     }
     public function unliking(Post $post){
         return $this->unlikes()->where('post_id' , $post->id)->exists();
     } 
+
+    public function follows(){
+        return $this->belongsToMany(User::class , 'follows' , 'follower_id' , 'follow_id')->withTimestamps();
+    }
+    public function followers(){
+        return $this->belongsToMany(User::class , 'follows' , 'follow_id' , 'follower_id')->withTimestamps();
+    }
+    public function theFollowers(User $user){
+        return $this->followers()->where('follower_id' , $user->id)->exists();
+    }
+    public function theFollows(User $user){
+        return $this->follows()->where('follow_id' , $user->id)->exists();
+    }
+    public function getImageUrl(){
+        if($this->image){
+            return url('storage/' , $this->image);
+        }
+        return 'https://api.dicebear.com/6.x/fun-emoji/svg?seed='.$this->name;
+    }
+    
 }

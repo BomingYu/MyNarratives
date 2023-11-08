@@ -24,13 +24,8 @@
                 <img src="{{ asset('news.png') }}" alt="Posts" class="postsIcon">
                 <span>{{ $user->posts()->count() }}</span>
             </div>
-            {{-- <div class="postCardUserRight">
-                <img src="{{ asset('heart.png') }}" alt="Likes" class="likeIcon">
-                <span>{{$user->likes()->count()}}</span>
-                <img src="{{ asset('unheart.png') }}" alt="Likes" class="likeIcon">
-                <span>UnlikeCount</span>
-            </div> --}}
         </div>
+        @include('components.users.userFollowCard')
         <hr>
     </div>
 @endif
