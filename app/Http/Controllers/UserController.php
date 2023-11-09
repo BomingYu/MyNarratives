@@ -69,7 +69,13 @@ class UserController extends Controller
     }
 
     public function gotoProfile(User $user){
-        $posts = $user->posts()->paginate(5);
+        $posts = $user->posts()->paginate($perPage = 5, $columns = ['*'], $pageName = 'posts');
+        //dd(auth()->user() == $user);
+        if(auth()->user() == $user){
+            $follows = auth()->user()->follows()->paginate($perPage = 10, $columns = ['*'], $pageName = 'follows');
+            $followers = auth()->user()->followers()->paginate($perPage = 10, $columns = ['*'], $pageName = 'followers');
+            return view('profilePage' , compact('user' , 'posts' , 'follows' , 'followers'));
+        }
         return view('profilePage' , compact('user' , 'posts'));
     }
 

@@ -25,6 +25,7 @@
         @else
             <h5 class="warningMessage">{{ $user->name }} has no post.</h5>
         @endif
+        <div class="mt-3">{{$posts->appends(Arr::except(Request::query() , 'posts'))->links()}}</div>
     @endif
 @endsection
 

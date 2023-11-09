@@ -11,7 +11,7 @@
                 <img src="{{ asset('music.png') }}" alt="Posts" class="postsIcon">
                 <span>{{ Auth::user()->posts()->count() }}</span>
             </div>
-            <p>{{ Auth::user()->bio }}</p>
+            <p class="userProfileP">{{ Auth::user()->bio }}</p>
             <a href="{{route('user.edit' , Auth::user()->id)}}" class="m-3">Edit Profile</a>
         </div>
     </div>

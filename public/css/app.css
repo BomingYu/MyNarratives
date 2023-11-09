@@ -14,6 +14,10 @@ body {
     flex: 1;
     margin: 5px;
 }
+.userProfileP{
+    word-wrap: break-word;
+    word-break: break-all;
+}
 .midDiv{
     flex:4;
     /* border: 1px black solid; */
@@ -223,10 +227,21 @@ body {
     object-position: center;
     border-radius: 50%;
 }
-.userFollowDiv{
+.followUserDiv{
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+.followUsersContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+.rightFollowsDiv{
+    margin-left: 3px;
+    margin-right: 3px;
 }
 .footerDiv{
     background-color: rgb(180, 180, 180);

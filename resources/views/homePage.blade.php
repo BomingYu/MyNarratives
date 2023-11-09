@@ -17,6 +17,7 @@
     @else
         <h5 class="warningMessage">No Post Shown</h5>
     @endif
+    <div class="mt-3">{{$posts->appends(Arr::except(Request::query() , 'posts'))->links()}}</div>
 @endsection
 
 @section('rightSideBox')

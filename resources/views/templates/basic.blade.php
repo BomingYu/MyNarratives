@@ -25,7 +25,7 @@
         @yield('mainBody')
     </div>
     <footer class="footerDiv">
-        <p>&copy; 2023 Boming Yu | <a href="#">Details/Contact</a></p>
+        <p>&copy; 2023 Boming Yu | <a href='http://ec2-52-63-32-41.ap-southeast-2.compute.amazonaws.com' target="_blank"/>Details/Contact</a></p>
     </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
