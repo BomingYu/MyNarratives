@@ -5,11 +5,13 @@
 @endsection
 
 @section('leftSIdeBox')
-    @if (Auth::user()->id === $user->id)
-        @include('components.sideBars.myLeftBar')
-    @else
-        @include('components.sideBars.otherUserLeftBar')
-    @endif
+    @auth
+        @if (Auth::user()->id === $user->id)
+            @include('components.sideBars.myLeftBar')
+        @else
+            @include('components.sideBars.otherUserLeftBar')
+        @endif
+    @endauth
 @endsection
 
 @section('midDiv')
@@ -25,14 +27,16 @@
         @else
             <h5 class="warningMessage">{{ $user->name }} has no post.</h5>
         @endif
-        <div class="mt-3">{{$posts->appends(Arr::except(Request::query() , 'posts'))->links()}}</div>
+        <div class="mt-3">{{ $posts->appends(Arr::except(Request::query(), 'posts'))->links() }}</div>
     @endif
 @endsection
 
 @section('rightSideBox')
-    @if (Auth::user()->id === $user->id)
-        @include('components.sideBars.myRightBar')
-    @else
-        @include('components.sideBars.otherUserRightBar')
-    @endif
+    @auth
+        @if (Auth::user()->id === $user->id)
+            @include('components.sideBars.myRightBar')
+        @else
+            @include('components.sideBars.otherUserRightBar')
+        @endif
+    @endauth
 @endsection
